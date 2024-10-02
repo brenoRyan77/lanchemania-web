@@ -1,0 +1,49 @@
+.modal-product-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.modal-product-description {
+  color: #6c757d;
+  font-size: 1rem;
+}
+
+.modal-product-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #28a745;
+}
+
+.product-observacao label {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.product-observacao textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+button[mat-raised-button] {
+  background-color: #28a745;
+  color: white;
+  width: 100%;
+}
+
+.mat-dialog-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}

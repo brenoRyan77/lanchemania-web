@@ -1,4 +1,3 @@
-import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
@@ -13,7 +12,7 @@ registerLocaleData(localePt);
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, ProdutosComponent, HttpClientModule],
+  imports: [RouterOutlet, HeaderComponent, ProdutosComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   providers : [

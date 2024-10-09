@@ -4,12 +4,13 @@ import { environment } from '../environments/environment';
 import { Observable } from 'rxjs';
 import { Cardapio } from '../models/cardapio';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class CardapioService {
 
-  private apiUrl = `${environment}/cardapio`;
+  private apiUrl = `${environment.apiUrl}/cardapio`;
 
   constructor(private http: HttpClient) { }
 

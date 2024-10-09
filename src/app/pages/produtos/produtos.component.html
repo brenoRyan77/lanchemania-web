@@ -1,7 +1,7 @@
 <div class="container mt-4">
     <h3>Produtos</h3>
     <nav mat-tab-nav-bar [tabPanel]="tabPanel" class="nav-sticky">
-        @for (c of categorias; track trackByCategoria) {
+        @for (c of categorias; track c) {
         <a mat-tab-link (click)="scrollToSection(c.chave)" [active]="activeLink === c.chave">
             {{ c.label }}
         </a>
@@ -9,12 +9,12 @@
     </nav>
     <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
 
-    @for (c of categorias; track trackByCategoria) {
+    @for (c of categorias; track c) {
     <div id="{{ c.chave }}" class="category-section mt-4">
         <h3>{{ c.label }}</h3>
 
         <div class="row">
-            @for (produto of produtos | filtroCategoria:c.chave; track trackByProdutoFn) {
+            @for (produto of produtos | filtroCategoria:c.label; track produto) {
             <div class="col-md-6">
                 <div class="card mb-3 product-card d-flex flex-row align-items-center" (click)="abrirModal(produto)">
                     <div class="card-body">

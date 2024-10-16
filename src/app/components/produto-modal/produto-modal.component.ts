@@ -3,6 +3,11 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CurrencyPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Store, select  } from '@ngrx/store'
+import { adicionarProduto } from '../../store/actions/carrinho.actions';
+import { CarrinhoState } from '../../store/reducers/carrinho.reducer';
+import { Item } from '../../models/itens';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-produto-modal',
@@ -15,15 +20,21 @@ import { FormsModule } from '@angular/forms';
   ]
 })
 export class ProdutoModalComponent {
+
+  carrinho$: Observable<CarrinhoState>;
+
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,
-    private dialogRef: MatDialogRef<ProdutoModalComponent>
-  ) { }
+    private dialogRef: MatDialogRef<ProdutoModalComponent>,
+    private store: Store<{ carrinho: CarrinhoState}>
+  ) { 
+    this.carrinho$ = this.store.pipe(select('carrinho'));
+  }
 
   quantidade: number = 1;
   observacao: string = '';
 
   onNoClick(): void {
-    this.dialogRef.close(); // Fecha o modal
+    this.dialogRef.close();
   }
 
   aumentarQuantidade() {
@@ -37,11 +48,12 @@ export class ProdutoModalComponent {
   }
 
   adicionarAoCarrinho() {
-    const pedido = {
-      produto: this.data,
+    const item: Item = {
+      observacao: this.observacao,
       quantidade: this.quantidade,
-      observacao: this.observacao
+      cardapio: this.data,
     };
-    this.dialogRef.close(pedido);
+    this.store.dispatch(adicionarProduto({ item }));
+    this.dialogRef.close(item);
   }
 }

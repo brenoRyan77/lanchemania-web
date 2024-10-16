@@ -16,7 +16,6 @@
 </div>
 
 <div mat-dialog-actions style="display: flex; justify-content: space-between; align-items: center;">
-    <!-- Controle de Quantidade -->
     <div class="quantity-control" style="display: flex; align-items: center;">
         <button mat-icon-button (click)="diminuirQuantidade()" style="margin-right: 10px;">
             <i class="fas fa-minus"></i>
@@ -27,7 +26,6 @@
         </button>
     </div>
     
-    <!-- Botão de Adicionar -->
     <button type="button" class="btn btn-success" style="flex-grow: 1; margin-left: 20px; max-width: 250px;" (click)="adicionarAoCarrinho()">
         Adicionar ({{ (data.preco * quantidade | currency: 'BRL':'symbol':'1.2-2') }})
     </button>

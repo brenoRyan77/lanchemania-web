@@ -70,23 +70,9 @@
 }
 
 .produto-item p {
-    margin: 0;
-}
-
-.d-flex {
     display: flex;
-}
-
-.justify-content-between {
-    justify-content: space-between;
-}
-
-.align-items-center {
-    align-items: center;
-}
-
-.text-success {
-    color: #28a745;
+    text-transform: uppercase;
+    font-size: 13px;
 }
 
 .meus-dados button {
@@ -103,17 +89,9 @@
     margin-top: 5px;
 }
 
-.btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-}
-
-.btn-outline-primary {
-    color: #007bff;
-    border-color: #007bff;
-}
-
-.btn-secondary {
-    background-color: #6c757d;
-    border-color: #6c757d;
+.produto-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
 }

@@ -6,17 +6,27 @@
                 <div class="produto-info">
                     @for (item of carrinho; track item) {
                         <div class="produto-item">
-                            <p>{{item.quantidade + "x "}} {{ item.cardapio.nome }}</p>
-                            <p>{{ item.cardapio.descricao }}</p>
-                            <p class="text-success">{{ item.cardapio.preco | currency: 'BRL' }}</p>
+                            <div class="produto-detail">
+                                <div>
+                                    <p>{{ item.quantidade + "x "}} {{ item.cardapio.nome }}</p>
+                                    <p>{{ item.cardapio.descricao }}</p>
+                                </div>
+                                <p class="text-success">{{ item.quantidade * item.cardapio.preco | currency: 'BRL' }}</p>
+                                <!-- <button class="btn">
+                                    <i class="fas fa-trash"></i>
+                                </button> -->
+                            </div>
+                            <hr class="linha-divisoria">
                         </div>
                     }
                 </div>
                 <div class="d-flex justify-content-between">
                     <p>Subtotal</p>
+                    <p>{{ calcularSubtotal() | currency: 'BRL' }}</p>
                 </div>
                 <div class="d-flex justify-content-between">
                     <p>Total</p>
+                    <p>{{ calcularTotal() | currency: 'BRL' }}</p>
                 </div>
                 <div class="meus-dados">
                     <button class="btn btn-outline-primary w-100">Entrar ou Cadastrar</button>
@@ -30,7 +40,7 @@
                 <button class="btn btn-primary w-100 mt-3">Finalizar Pedido</button>
             </div>
         </div>
-    }@else{
+    } @else {
         <div class="text-center">
             <img src="https://www.promokit.com.br/assets/loja/sem-pedidos.png" alt="Sacola Vazia" class="img-fluid">
             <p>Sua sacola está vazia</p>

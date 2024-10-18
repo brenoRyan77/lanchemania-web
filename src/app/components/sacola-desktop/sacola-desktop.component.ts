@@ -27,4 +27,12 @@ export class SacolaDesktopComponent {
       console.log(this.carrinho); 
     });
   }
+
+  calcularSubtotal(): number {
+    return this.carrinho.reduce((acc, item) => acc + (item.cardapio.preco * item.quantidade), 0);
+  }
+
+  calcularTotal(): number {
+    return this.calcularSubtotal();
+  }
 }

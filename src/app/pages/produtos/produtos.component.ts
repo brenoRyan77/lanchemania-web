@@ -8,11 +8,12 @@ import { ProdutoModalComponent } from '../../components/produto-modal/produto-mo
 import { CurrencyPipe } from '@angular/common';
 import { Categoria } from '../../models/categoria';
 import { ConstantesService } from '../../services/constantes.service';
+import { SacolaDesktopComponent } from '../../components/sacola-desktop/sacola-desktop.component';
 
 @Component({
   selector: 'app-produtos',
   standalone: true,
-  imports: [MatTabsModule, FiltroCategoriaPipe, ProdutoModalComponent, CurrencyPipe],
+  imports: [MatTabsModule, FiltroCategoriaPipe, ProdutoModalComponent, CurrencyPipe, SacolaDesktopComponent],
   templateUrl: './produtos.component.html',
   styleUrl: './produtos.component.css',
   providers: [CardapioService, ConstantesService]

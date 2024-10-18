@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './components/header/header.component';
 import { ProdutosComponent } from './pages/produtos/produtos.component';
 import { CardapioService } from './services/cardapio.service';
 import { registerLocaleData } from '@angular/common';
